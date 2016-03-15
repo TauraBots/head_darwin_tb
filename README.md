@@ -41,4 +41,14 @@ python trajectory_client.py
 #and go crazy
 ```
 
+## Some tips
+```
+#Move the head about 28 degrees
+rostopic pub -1 /head_pan_controller/command std_msgs/Float64 -- -0.5
+#Disable the torque of the pan motor
+rosservice call /head_pan_controller/torque_enable False
+
+```
+
+
 
