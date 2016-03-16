@@ -19,11 +19,19 @@ sudo pip install pyserial
 * Remove deprecated functions from dynamixel_io
 
 ```
-#remove this
-#self.ser = serial.Serial(port)
-#self.ser.setTimeout(0.015)
-#self.ser.baudrate = baudrate
-#add this
+cd /opt/ros/DISTRO/lib/python2.7/dist-packages/dynamixel_driver
+sudo chmod u=rw dynamixel_io.py
+sudo vim dynamixel_io.py
+
+After opening VIM press ESC, type "/self.ser" and press ENTER, 
+you will go to the following code which you should comment with "#":
+
+self.ser = serial.Serial(port)
+self.ser.setTimeout(0.015)
+self.ser.baudrate = baudrate
+
+After that code you should add this line:
+
 self.ser = serial.Serial(port, baudrate, timeout=0.015)
 ```
 
