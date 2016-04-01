@@ -69,7 +69,7 @@ class Joint:
                   dOffset = -dOffset
             self.m_TiltAngle += (pOffset + dOffset)
             print "Tilt: %.2f Pan: %2f" % (self.m_TiltAngle, self.m_PanAngle)
-             arm.move_joint([self.m_PanAngle,self.m_TiltAngle])
+            self.move_joint([self.m_PanAngle,self.m_TiltAngle])
 
 
 def main():
